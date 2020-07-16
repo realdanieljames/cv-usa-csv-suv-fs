@@ -30,22 +30,24 @@ const getNewCasesByDay = require('./get-new-cases-by-day.js')
 
 if (command === 'new') {
     const rows = getRows(file);
-    // console.log(getNewCasesByDay(date, rows))
+    console.log("new cases reported for the day, " + date + ':=  ' + getNewCasesByDay(date, rows))
 
 }
 
 else if (command === 'total'){
     const rows = getRows(file);
-    // console.log(getTotalCasesByDay(date, rows))
+    console.log("total cases on that day:" + date + ':= ' + getTotalCasesByDay(date, rows))
 }
 
-else {return "menu"}
-
-
-for (const rows of getRow(file)){
-    const allDates = getDate
-    console.log(rows)
+else if (command !== 'new' || command !== 'total'){
+    console.log("menu")
 }
+
+
+// for (const rows of getRow(file)){
+//     const allDates = getDate
+//     console.log(rows)
+// }
 
 
 
