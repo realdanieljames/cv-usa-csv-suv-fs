@@ -28,25 +28,38 @@ const getNewCasesByDay = require('./get-new-cases-by-day.js')
 // create a 'default'- for 'switch'. or an 'else' - for 'if/else' statement
 // 2 commands allowed 'total' and 'new', if not return 'menu'
 
-if (command === 'new') {
+if (command === 'new' && date < '2020-07-12' && date > '2019-12-31') {
     const rows = getRows(file);
     console.log("new cases reported for the day, " + date + ':=  ' + getNewCasesByDay(date, rows))
 
 }
 
-else if (command === 'total'){
+else if (command === 'total' && date < '2020-07-12' && date > '2019-12-31'){
     const rows = getRows(file);
     console.log("total cases on that day:" + date + ':= ' + getTotalCasesByDay(date, rows))
 }
 
-else if (command !== 'new' || command !== 'total'){
-    console.log("menu")
+// else if (command !== 'new' || command !== 'total'){
+//     console.log("menu")
+// }
+
+else {
+    console.log('invalid input')
+    console.log('')
+    console.log("type ^ node main.js new [insert date] ^ to see all the NEW CASES for that day")
+    console.log('')
+    console.log("type ^ node main.js total [insert date] ^ to see all the TOTAL CASES for that day")
+    console.log('')
 }
-
-
-// for (const rows of getRow(file)){
-//     const allDates = getDate
-//     console.log(rows)
+// if (date !== get)
+// for (const rows of getRows(file)){
+//     const allDatesArray = []
+//     const allDates = getDate(rows)
+//     console.log(allDates)
+//     console.log(allDatesArray)
+//     if (allDatesArray.includes(date)){
+//         console.log('error date')
+// }
 // }
 
 
